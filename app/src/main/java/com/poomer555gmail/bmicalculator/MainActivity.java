@@ -1,6 +1,7 @@
 package com.poomer555gmail.bmicalculator;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,9 +33,10 @@ public class MainActivity extends AppCompatActivity {
                     Double BMI = Weight / ((Height/100) * (Height/100));
                    String BMIText = getBMItext(BMI);
                     String result = String.format("ค่า BMI ที่ได้คือ %.1f\n\nอยู่ในเกณฑ์ : %S",BMI,BMIText);
+
                    /* String result = "ค่าBMIที่่ได้คือ "+String.valueOf(BMI);
                     result+="\n\n อยู่ในเกณฑ์ : "+BMIText;*/
-                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+               /* AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
                 dialog.setTitle("BMI Result");
                 dialog.setMessage(result);
                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -48,12 +50,18 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-                dialog.show();
+                dialog.show();*/
                /* Toast T =Toast.makeText(MainActivity.this,"ค่าBMIที่่ได้คือ "+String.valueOf(BMI),Toast.LENGTH_LONG);
                 T.show();*/
+                Intent intent = new Intent(MainActivity.this, BMIResultActivity.class);
+                intent.putExtra("bmi_value",BMI);
+                intent.putExtra("bmi_text",BMIText);
+                startActivity(intent);
             }
         });
             }
+
+
 
     private String getBMItext(Double bmi) {
         String BMIText = "" ;

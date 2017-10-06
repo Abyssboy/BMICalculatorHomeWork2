@@ -3,7 +3,7 @@
     <string name="height_label">Height (cm)</string>
     <string name="weight_label">Weight(kg)</string>
     <string name="calculate_label">Calculate</string>
-
-
+    <string name="bmians_lable">ค่า BMI ที่ได้คือ</string>
+    <string name="ans_lable">อยู่ในเกณฑ์ที่</string>
 
 </resources>
